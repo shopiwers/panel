@@ -1,0 +1,179 @@
+<div class="d-flex flex-column flex-root">
+  <div class="d-flex flex-row flex-column-fluid page">
+    <app-sidebar></app-sidebar>
+    <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+      <!--end::Header-->
+      <app-top></app-top>
+      <!--begin::Content-->
+      <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Subheader-->
+        <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
+          <div
+            class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap"
+          >
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-2">
+              <!--begin::Page Title-->
+              <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+                Dashboard
+              </h5>
+
+              <!--end::Page Title-->
+              <!--begin::Actions-->
+              <div
+                class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"
+              ></div>
+              <span class="text-muted font-weight-bold mr-4">#XRS-45670</span>
+              <a
+                href="#"
+                class="btn btn-light-warning font-weight-bolder btn-sm"
+                >Add New</a
+              >
+              <!--end::Actions-->
+            </div>
+            <!--end::Info-->
+          </div>
+        </div>
+
+        <!-- Banner -->
+        <section
+          id="banner"
+          style="background-image: url(../../../assets/img/latera.jpg)"
+        >
+          <div class="inner">
+            <header>
+              <br />
+
+              <h4 style="color: white" style="margin-left: 20px">
+                <img src="../../../assets/img/home.png" alt="" />
+                Ir a inicio
+              </h4>
+              <br />
+            </header>
+            <h1 style="color: white; text-align: center">
+              ¡Tu objetivo a sido agregado exitosamente!
+            </h1>
+            <p style="color: white; text-align: center; padding-bottom: 1rem">
+              ¡Te hemos enviado un correo con la notificacion!
+            </p>
+            <footer style="text-align: center; float: inherit">
+              <div class="container">
+                <div
+                  class="row justify-content-center"
+                  style="margin-left: 20px; margin-right: 20px"
+                >
+                  <div class="col-lg-4 mb-3">
+                    <div class="card custom-shadow text-left">
+                      <div class="card-body">
+                        <h6 class="card-title">
+                          Conocer mi sobrino
+                          <a style="color: rgb(96, 230, 103)">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Reenviar Objetos
+                          </a>
+                        </h6>
+                        <p class="card-text">Categoria bienestar</p>
+                        <a class="mr-3"
+                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En esta
+                          fecha&nbsp;&nbsp;&nbsp;&nbsp;</a
+                        >
+                        <a class="mr-3">&nbsp;&nbsp;&nbsp;&nbsp;Lograria</a>
+                        <a>&nbsp;&nbsp;&nbsp;&nbsp;Ya cuenta con</a>
+
+                        <a class="badge bg-primary mx-3">Diciembre/2022</a>
+                        <a class="badge bg-warning text-dark mx-3"
+                          >$6.000.000</a
+                        >
+                        <a class="badge bg-success mx-3">$0</a>
+
+                        <br /><br />
+                        <p style="color: rgb(96, 230, 103)">
+                          Asociar productos para monitorear su progreso
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </section>
+
+        <div>
+          <br />
+
+          <h4 style="text-align: center">
+            <b>
+              Vamos por esos <span style="color: orange"> $6.000.000 </span>para
+              <span style="color: orange"> conocer mi sobrino</span></b
+            >
+          </h4>
+          <p style="text-align: center">
+            ¡A travez de tus productos y nuestros rendimeintos podremos
+            lograrlo!
+          </p>
+          <h5 style="text-align: center">
+            <b>
+              Asocia tus productos o adquiere uno nuevo
+              <img src="../../../assets/img/Group 12953.png" alt=""
+            /></b>
+          </h5>
+          <br />
+        </div>
+
+        <!--end::Subheader-->
+        <!--begin::Entry-->
+        <div class="d-flex flex-column-fluid">
+          <!--begin::Container-->
+          <div class="container">
+            <!-- tarjetas -->
+            <div class="container">
+              <div
+                class="row justify-content-center"
+                style="margin-left: 20px; margin-right: 20px"
+              >
+                <div class="col-lg-4 mb-3" *ngFor="let product of products">
+                  <div class="card text-center custom-sh">
+                    <div class="card-header">
+                      {{ product.nameProduct }} {{ efectivo }}
+                    </div>
+
+                    <div class="card-body">
+                      <p class="card-text">
+                        {{ cuenta }} {{ product.numberProduct }}
+                      </p>
+                      <p>{{ product.detaildProduct }}</p>
+                    </div>
+                    <div
+                      class="card-footer text-body-secondary"
+                      style="background-color: rgb(245, 240, 235)"
+                    >
+                      <p>Cuenta con $2.000.000 para tu objetivo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--end::Entry-->
+          </div>
+          <!--end::Content-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="text-center">
+    <button
+      type="button"
+      class="btn rounded-pill"
+      style="background-color: rgb(205, 216, 222)"
+    >
+      <b style="color: black">ASOCIAR A OBJETIVO</b>
+    </button>
+  </div>
+  <br />
+  <br />
+</div>
+
+<app-footer></app-footer>
