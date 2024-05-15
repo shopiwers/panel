@@ -1,6 +1,15 @@
 # Panel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+@angular/cli                    16.2.14
+@schematics/angular             16.2.14
+rxjs                            7.8.1
+typescript                      5.1.6
+zone.js                         0.13.3
+
+#Ruta para la creacion de user y password
+http://localhost:4200/colaborador/create
+
 
 ## Development server
 
