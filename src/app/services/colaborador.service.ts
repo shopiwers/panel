@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GLOBAL } from './GLOBAL';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root',
@@ -25,35 +26,34 @@ export class ColaboradorService {
     return localStorage.getItem('token');
   }
 
-  public isAuthenticate(allowRoles: string[]): boolean {
+  // Autenticacion Guards
+  public isAuthenticate(): boolean {
     const token = localStorage.getItem('token');
 
     if (!token) {
       return false;
-      console.log('ingreso token ');
+      // console.log('ingreso token ');
     }
 
-    // try {
-    //   const helper = new JwtHelperService();
-    //   var decodedToken = helper.decodeToken(token);
+    try {
+      const helper = new JwtHelperService();
+      var decodedToken = helper.decodeToken(token);
 
-    //   //console.log(decodedToken);
-    //   if (helper.isTokenExpired(token)) {
-    //     localStorage.clear();
-    //     return false;
-    //   }
+      //console.log(decodedToken);
+      if (helper.isTokenExpired(token)) {
+        localStorage.clear();
+        return false;
+      }
 
-    //   if (!decodedToken) {
-    //     console.log('No es valido token');
-    //     localStorage.removeItem('token');
-    //     return false;
-    //   }
-    // } catch (error) {
-    //   localStorage.removeItem('token');
-    //   return false;
-    // }
-    // return allowRoles.includes(decodedToken['role']);
-
+      if (!decodedToken) {
+        console.log('No es valido');
+        localStorage.removeItem('token');
+        return false;
+      }
+    } catch (error) {
+      localStorage.removeItem('token');
+      return false;
+    }
     return true;
   }
 

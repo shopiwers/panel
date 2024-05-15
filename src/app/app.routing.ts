@@ -7,13 +7,31 @@ import { CreateColaboradorComponent } from './components/colaborador/create-cola
 import { EditColaboradorComponent } from './components/colaborador/edit-colaborador/edit-colaborador.component';
 import { SkandiaComponent } from './components/skandia/skandia.component';
 
+import { AdminGuard } from './guards/admin.guard';
+
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'colaborador', component: IndexColaboradorComponent },
-  { path: 'colaborador/create', component: CreateColaboradorComponent },
-  { path: 'colaborador/:id', component: EditColaboradorComponent },
-  { path: 'skandia', component: SkandiaComponent },
   { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'colaborador',
+    component: IndexColaboradorComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'colaborador/create',
+    component: CreateColaboradorComponent,
+  },
+  {
+    path: 'colaborador/:id',
+    component: EditColaboradorComponent,
+    canActivate: [AdminGuard],
+  },
+  { path: 'skandia', component: SkandiaComponent },
 ];
 
 export const appRoutingProviders: any[] = [];
